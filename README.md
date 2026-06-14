@@ -16,10 +16,7 @@
 <div align="center">
 
 <img src="https://skillicons.dev/icons?i=nodejs,ts,py,go,aws,terraform,docker,react,git,linux&theme=dark&perline=10" />
-
-<br/>
-
-![Effect TS](https://img.shields.io/badge/Effect--TS-6366F1?style=flat-square&logo=effect&logoColor=white)
+<img src="https://raw.githubusercontent.com/CryptoMaN-Rahul/CryptoMaN-Rahul/main/icons/effect.svg" width="48" height="48" alt="Effect TS" />
 
 </div>
 
