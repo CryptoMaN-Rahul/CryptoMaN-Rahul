@@ -28,46 +28,50 @@
   <rect width="1280" height="720" rx="18" fill="#ffffff"/>
   <rect x="24" y="24" width="1232" height="672" rx="18" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
   <text class="ascii" xml:space="preserve">
-<tspan x="70" y="82.0"></tspan>
-<tspan x="70" y="97.0"></tspan>
-<tspan x="70" y="112.0">              .*##=:*@%-</tspan>
-<tspan x="70" y="127.0">           .*%%%#%%%@%#%%%#</tspan>
-<tspan x="70" y="142.0">           @@#%%%%#%%%%%%#%+</tspan>
-<tspan x="70" y="157.0">          *%%%%%@@%#%%%%%#%%*</tspan>
-<tspan x="70" y="172.0">        :@@%%%%%%%%%%@@%%#%%%%=</tspan>
-<tspan x="70" y="187.0">        @%%%@%%%%%%%@%@@%%%%%#%@</tspan>
-<tspan x="70" y="202.0">        %%%%%@@%%%%%%%%%@@@@@%%##</tspan>
-<tspan x="70" y="217.0">        @%%%%%%@%%%%%%@@%%@@%%%%@#</tspan>
-<tspan x="70" y="232.0">       +@%@%%##%%%%%%%%%@@%@@@@@%%.</tspan>
-<tspan x="70" y="247.0">       %%%@%%%%%%%%%%%%%#%@@@@@@%@=</tspan>
-<tspan x="70" y="262.0">       @%@@@@@@%%%%%%*-.:-#@%@@%%#</tspan>
-<tspan x="70" y="277.0">       @%@@@@%%%##*+-    .:*@%@%@:</tspan>
-<tspan x="70" y="292.0">       +@%@@%%*=-:.        :%%%@:</tspan>
-<tspan x="70" y="307.0">        %%%@#+:             +@%+</tspan>
-<tspan x="70" y="322.0">        +@**=-=+-.   :==-:: :%@</tspan>
-<tspan x="70" y="337.0">         @=*%@@@@#-.-#@@%#*= *=</tspan>
-<tspan x="70" y="352.0">         =+#%%%+##:  =*##*=. =</tspan>
-<tspan x="70" y="367.0">         =-:-=:.-=     ..    .:</tspan>
-<tspan x="70" y="382.0">        :*:     .:            =</tspan>
-<tspan x="70" y="397.0">         +-.    ::           .</tspan>
-<tspan x="70" y="412.0">         *=:   .-:.         .:</tspan>
-<tspan x="70" y="427.0">         #+-.  .=#*-=+     .:-</tspan>
-<tspan x="70" y="442.0">         **=:.  -%+:++    ..-.</tspan>
-<tspan x="70" y="457.0">          #+-::=*+====++. .:-</tspan>
-<tspan x="70" y="472.0">          +#=-%@#=--::+%+ :*.</tspan>
-<tspan x="70" y="487.0">           @#+#++=: .:..--*%</tspan>
-<tspan x="70" y="502.0">           #@#=--+##+-:.:*@=</tspan>
-<tspan x="70" y="517.0">            @%+-:.::    +%%</tspan>
-<tspan x="70" y="532.0">            %@%+::=+-.:*@#...</tspan>
-<tspan x="70" y="547.0">          :%+#@@%%%@%%%@*. .@:</tspan>
-<tspan x="70" y="562.0">          @#++#%@@@@@@#-   .##</tspan>
-<tspan x="70" y="577.0">         *%#+++*%@@%*=.     ##*.</tspan>
-<tspan x="70" y="592.0">        *@@%==++***=:      :%#**+=</tspan>
-<tspan x="70" y="607.0">     .*@@%%@*=---=-:       *%##**%%*-</tspan>
-<tspan x="70" y="622.0">   -%@@%%@%%#=-..::.      :%###***%%%%*-</tspan>
-<tspan x="70" y="637.0"> =@@%%%%@@@%#+=:...       #%###***#%%##%%*</tspan>
-<tspan x="70" y="652.0">@@%%%%%%@@@@%*--.        =%###****##%%%##%</tspan>
-<tspan x="70" y="667.0">%%%%%%%#%%@@%%+=-       :##*******###%#%%%</tspan>
+<tspan x="70" y="72.0">             :=%%####**%%%##+-=+</tspan>
+<tspan x="70" y="86.4">          -#@@%%%#%%%*%%%%#%%%%%+</tspan>
+<tspan x="70" y="100.8">         +@%%%%%%%%#%#%%%%%#%%#%%-</tspan>
+<tspan x="70" y="115.2">        .+%%%%##%%%%##%@%%%%%###%#+</tspan>
+<tspan x="70" y="129.6">       =%%%%%%%##@%@%##%%#%%#%##%%%*.</tspan>
+<tspan x="70" y="144.0">      %@%%%%%%%%%%%%%%%%%%%@%#*#%%#%%#=</tspan>
+<tspan x="70" y="158.4">     #@%%%%%%%%###%%##@%%@@@@%%%%%#%*#@%</tspan>
+<tspan x="70" y="172.8">     %%@@%@@@@%%%%%%#*%@%#%%@@@@@%@%#%#%*</tspan>
+<tspan x="70" y="187.2">     %%%%%%%%@%%%###%#%%%%#%%%%@@@@%#%##%*</tspan>
+<tspan x="70" y="201.6">     @%%%%#%%#%%%%#*%%%#%%%@%%%@@@%*%%%%%%*</tspan>
+<tspan x="70" y="216.0">    *@%@%@%%#+%%%%%##%%%%%@%@%%%%%%%%@@%%%*</tspan>
+<tspan x="70" y="230.4">    %%%@@@%##***%##%@%%####%%%%%%%@@%@@@@%%*</tspan>
+<tspan x="70" y="244.8">   .@%@@@%%%@%%#*#%%%%##%#%#*##@@@%@@@@@%%%-</tspan>
+<tspan x="70" y="259.2">   -@%@@%%@@@@@%#%%%%%#%#=:..:-*%@@@%%@@%%-</tspan>
+<tspan x="70" y="273.6">   :%%@%@%@@%%%%#+##*++=.     .-+%%@%%@%%@.</tspan>
+<tspan x="70" y="288.0">    @%@@@@@@@%%**+++-:.        ..=%%%%%%@</tspan>
+<tspan x="70" y="302.4">    +@%%%@%%%#*=-:.             ..*@%%%@:</tspan>
+<tspan x="70" y="316.8">     %%@@%%%*+-.                 .:%%%@=</tspan>
+<tspan x="70" y="331.2">     -%%##%+:.:-:          .      .*%%#</tspan>
+<tspan x="70" y="345.6">      @%+++=*#%%%%*-..:-*#%@%#**=: -%@:</tspan>
+<tspan x="70" y="360.0">      *@=*%@@@%%@@@#=::=#@%%*+*++= .**</tspan>
+<tspan x="70" y="374.4">       #=%%%%#%*-%%#.  .=*+*#***:. .+</tspan>
+<tspan x="70" y="388.8">       -+=-*#++:.-*=    ...:-.:.    :</tspan>
+<tspan x="70" y="403.2">      @==.      ::::                 -=</tspan>
+<tspan x="70" y="417.6">      #=-.       .--                 .-</tspan>
+<tspan x="70" y="432.0">      +==-.      -=.                .:</tspan>
+<tspan x="70" y="446.4">      *++=:     :=:.               :.</tspan>
+<tspan x="70" y="460.8">      *#*=:.    =--*=::-.        ..-:</tspan>
+<tspan x="70" y="475.2">      *#*+-:.  .:*%%*+:=*-       .:=:.</tspan>
+<tspan x="70" y="489.6">      -%**=-:.   .*#= :+=       :::+.</tspan>
+<tspan x="70" y="504.0">       :%**-:.  -*%#*=*+++=:   .:.=-</tspan>
+<tspan x="70" y="518.4">        *%*+=:=%%#=-=-----#@#. .:-#</tspan>
+<tspan x="70" y="532.8">        .@#*=+%@%#*===-..-+*@-.:=#*</tspan>
+<tspan x="70" y="547.2">         @%%**%*+*=:    ..  --:**@.</tspan>
+<tspan x="70" y="561.6">         +@%%*+=-=*%%%%%+-:..:*%%#</tspan>
+<tspan x="70" y="576.0">          %%%#==+===+#+... ..+#%@:</tspan>
+<tspan x="70" y="590.4">          :@%%#-:-. .:      =#%%=.</tspan>
+<tspan x="70" y="604.8">          -#%%%#=..:===-..:*%%#:  +</tspan>
+<tspan x="70" y="619.2">         **+#%%@%*##%@@####%%#.   %%</tspan>
+<tspan x="70" y="633.6">        *@+**#%%%@%%%%%%%%%%=.    *@#</tspan>
+<tspan x="70" y="648.0">       .@%****#%%%%%%%%%@#=:      *%%=</tspan>
+<tspan x="70" y="662.4">       %%@*****##%@%@%%*-:        +@#%*</tspan>
+<tspan x="70" y="676.8">      %@%@#+++**#%%%%*=:..        #%%%##+:</tspan>
+<tspan x="70" y="691.2">   .*@@%@@%*++++++*++=-.         -@##%#**%@#-</tspan>
   </text>
   <text x="535" y="88" class="terminal title">rahul@cryptoman-rahul <tspan class="muted">---------------------------</tspan></text>
 <text x="535" y="125" class="terminal muted">- System --------------------------------------------------</text>
@@ -146,10 +150,10 @@
 <text x="535" y="474" class="terminal muted">- Contact -------------------------------------------------</text>
 <text x="535" y="499" class="terminal"><tspan class="label">GitHub:</tspan> <tspan class="muted">..........................</tspan> <tspan class="value">github.com/CryptoMaN-Rahul</tspan></text>
 <text x="535" y="524" class="terminal"><tspan class="label">LinkedIn:</tspan> <tspan class="muted">..........................</tspan> <tspan class="value">linkedin.com/in/0x-rahul</tspan></text>
-<text x="535" y="549" class="terminal"><tspan class="label">X:</tspan> <tspan class="muted">.................................</tspan> <tspan class="value">https://x.com/100x_rahul</tspan></text>
+<text x="535" y="549" class="terminal"><tspan class="label">X:</tspan> <tspan class="muted">.........................................</tspan> <tspan class="value">x.com/100x_rahul</tspan></text>
 <text x="535" y="586" class="terminal muted">- GitHub Stats --------------------------------------------</text>
-<text x="535" y="611" class="terminal"><tspan class="label">Repos:</tspan> <tspan class="muted">........................................</tspan> <tspan class="value">58 | Stars: 5</tspan></text>
-<text x="535" y="636" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">..............</tspan> <tspan class="value">296 repo | 58 contrib | Followers: 15</tspan></text>
-<text x="535" y="661" class="terminal"><tspan class="label">Contribs:</tspan> <tspan class="muted">............</tspan> <tspan class="value">1,407 visible + 1,334 private | PRs: 1</tspan></text>
+<text x="535" y="611" class="terminal"><tspan class="label">Repos:</tspan> <tspan class="muted">........................</tspan> <tspan class="value">58 | Stars: 5 | Followers: 15</tspan></text>
+<text x="535" y="636" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">............</tspan> <tspan class="value">296 repo | 58 contrib | Merged PRs: 202</tspan></text>
+<text x="535" y="661" class="terminal"><tspan class="label">Contribs:</tspan> <tspan class="muted">.....................</tspan> <tspan class="value">1,407 visible + 1,334 private</tspan></text>
 <text x="535" y="686" class="terminal"><tspan class="label">Lines of Code on GitHub:</tspan> <tspan class="muted">...</tspan> <tspan class="value">1,254,214</tspan> <tspan class="muted">(</tspan><tspan class="green">7,509,360++</tspan><tspan class="muted">, </tspan><tspan class="red">6,255,146--</tspan><tspan class="muted">)</tspan></text>
 </svg>

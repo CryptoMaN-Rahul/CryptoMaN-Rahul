@@ -13,6 +13,7 @@ import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections import Counter
 from collections.abc import Iterable
@@ -25,10 +26,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH = 1280
 HEIGHT = 720
-ASCII_COLS = 42
-ASCII_ROWS = 40
+ASCII_COLS = 48
+ASCII_ROWS = 44
 ASCII_FONT_SIZE = 15
-ASCII_LINE_HEIGHT = 15.0
+ASCII_LINE_HEIGHT = 14.4
 TERM_X = 535
 TERM_Y = 88
 TERM_LINE_HEIGHT = 25
@@ -45,7 +46,7 @@ DEFAULT_X = "@100x_rahul"
 DEFAULT_ASCII = ROOT / "assets" / "profile_ascii.txt"
 DEFAULT_STATS_CACHE = ROOT / "assets" / "profile_stats_cache.json"
 USER_AGENT = "cryptoman-rahul-profile-card"
-DEFAULT_PHOTO_CROP = "0.12,0.03,0.88,0.72"
+DEFAULT_PHOTO_CROP = "0.20,0.07,0.80,0.64"
 
 
 @dataclass(frozen=True)
@@ -71,6 +72,7 @@ class GitHubStats:
     private_contributions: int | None
     commit_contributions: int | None
     pull_request_contributions: int | None
+    merged_pull_requests: int | None
     followers: int
     languages: list[str]
     repos_for_line_stats: list[RepoSnapshot]
@@ -250,7 +252,7 @@ def repository_commit_count(repo: dict) -> int:
 
 def fetch_graphql_stats(login: str, token: str) -> GitHubStats:
     query = """
-    query($login: String!, $after: String) {
+    query($login: String!, $after: String, $mergedPrQuery: String!) {
       user(login: $login) {
         login
         name
@@ -282,17 +284,33 @@ def fetch_graphql_stats(login: str, token: str) -> GitHubStats:
           }
         }
       }
+      mergedPullRequests: search(query: $mergedPrQuery, type: ISSUE, first: 0) {
+        issueCount
+      }
     }
     """
     repos: list[dict] = []
     user: dict | None = None
+    merged_pull_requests: int | None = None
     after: str | None = None
 
     while True:
-        payload = graphql(token, query, {"login": login, "after": after})
-        user = payload.get("data", {}).get("user")
+        payload = graphql(
+            token,
+            query,
+            {
+                "login": login,
+                "after": after,
+                "mergedPrQuery": f"author:{login} is:pr is:merged",
+            },
+        )
+        data = payload.get("data", {})
+        user = data.get("user")
         if not user:
             raise RuntimeError(f"GitHub user not found: {login}")
+        merged_search = data.get("mergedPullRequests") or {}
+        if merged_pull_requests is None and "issueCount" in merged_search:
+            merged_pull_requests = int(merged_search["issueCount"])
         repositories = user["repositories"]
         repos.extend(repositories["nodes"])
         page_info = repositories["pageInfo"]
@@ -324,6 +342,7 @@ def fetch_graphql_stats(login: str, token: str) -> GitHubStats:
         private_contributions=contributions.get("restrictedContributionsCount"),
         commit_contributions=contributions.get("totalCommitContributions"),
         pull_request_contributions=contributions.get("totalPullRequestContributions"),
+        merged_pull_requests=merged_pull_requests,
         followers=int(user["followers"]["totalCount"]),
         languages=[name for name, _count in language_counts.most_common(8)],
         repos_for_line_stats=[
@@ -334,6 +353,19 @@ def fetch_graphql_stats(login: str, token: str) -> GitHubStats:
             for repo in repos
         ],
     )
+
+
+def fetch_merged_pr_count(login: str, token: str | None) -> int | None:
+    query = urllib.parse.urlencode({"q": f"author:{login} is:pr is:merged"})
+    try:
+        _status, payload = request_json(f"https://api.github.com/search/issues?{query}", token=token)
+    except RuntimeError as error:
+        warn(f"Merged PR stats unavailable: {error}")
+        return None
+    if not isinstance(payload, dict):
+        return None
+    total = payload.get("total_count")
+    return int(total) if isinstance(total, int) else None
 
 
 def fetch_rest_stats(login: str, token: str | None) -> GitHubStats:
@@ -370,6 +402,7 @@ def fetch_rest_stats(login: str, token: str | None) -> GitHubStats:
         private_contributions=None,
         commit_contributions=None,
         pull_request_contributions=None,
+        merged_pull_requests=fetch_merged_pr_count(login, token),
         followers=int(user.get("followers") or 0),
         languages=[name for name, _count in language_counts.most_common(8)],
         repos_for_line_stats=[
@@ -553,12 +586,9 @@ def language_summary(stats: GitHubStats) -> str:
 def contribution_summary(stats: GitHubStats) -> str:
     if stats.visible_contributions is None:
         return "Contributed: unavailable"
-    suffix = ""
-    if stats.pull_request_contributions:
-        suffix = f" | PRs: {format_int(stats.pull_request_contributions)}"
     if stats.private_contributions is None:
-        return f"{format_int(stats.visible_contributions)} visible{suffix}"
-    return f"{format_int(stats.visible_contributions)} visible + {format_int(stats.private_contributions)} private{suffix}"
+        return f"{format_int(stats.visible_contributions)} visible"
+    return f"{format_int(stats.visible_contributions)} visible + {format_int(stats.private_contributions)} private"
 
 
 def commit_summary(stats: GitHubStats) -> str:
@@ -636,18 +666,18 @@ def profile_lines(stats: GitHubStats) -> list[tuple[str, str | None]]:
         ("Contact", None),
         ("GitHub", f"github.com/{stats.login}"),
         ("LinkedIn", linkedin),
-        ("X", f"https://x.com/{x_handle.removeprefix('@')}"),
+        ("X", f"x.com/{x_handle.removeprefix('@')}"),
         ("", ""),
         ("GitHub Stats", None),
-        ("Repos", f"{format_int(stats.public_repos)} | Stars: {format_int(stats.stars)}"),
-        ("Commits", f"{commit_summary(stats)} repo | {format_int(stats.commit_contributions)} contrib | Followers: {format_int(stats.followers)}"),
+        ("Repos", f"{format_int(stats.public_repos)} | Stars: {format_int(stats.stars)} | Followers: {format_int(stats.followers)}"),
+        ("Commits", f"{commit_summary(stats)} repo | {format_int(stats.commit_contributions)} contrib | Merged PRs: {format_int(stats.merged_pull_requests)}"),
         ("Contribs", contribution_summary(stats)),
         ("Lines of Code on GitHub", lines_summary(stats)),
     ]
 
 
 def photo_to_ascii(photo: Path) -> list[str]:
-    from PIL import Image, ImageEnhance, ImageOps
+    from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
     image = Image.open(photo).convert("L")
     width, height = image.size
@@ -658,19 +688,23 @@ def photo_to_ascii(photo: Path) -> list[str]:
         int(width * right),
         int(height * bottom),
     ))
-    image = ImageOps.autocontrast(image)
-    image = ImageEnhance.Contrast(image).enhance(1.45)
-    image = ImageEnhance.Brightness(image).enhance(1.08)
+    image = ImageOps.autocontrast(image, cutoff=1)
+    image = image.filter(ImageFilter.UnsharpMask(radius=1.2, percent=180, threshold=3))
+    image = ImageEnhance.Contrast(image).enhance(1.75)
+    image = ImageEnhance.Brightness(image).enhance(1.07)
     image = image.resize((ASCII_COLS, ASCII_ROWS), Image.Resampling.LANCZOS)
 
-    ramp = "     .:-=+*#%@"
-    gamma = 1.35
+    ramp = "    .:-=+*#%@"
+    gamma = 1.42
     rows: list[str] = []
     for y in range(ASCII_ROWS):
         chars = []
         for x in range(ASCII_COLS):
             pixel = image.getpixel((x, y))
             darkness = ((255 - pixel) / 255) ** gamma
+            if darkness < 0.04:
+                chars.append(" ")
+                continue
             index = int(darkness * (len(ramp) - 1))
             chars.append(ramp[index])
         rows.append("".join(chars).rstrip())
@@ -776,7 +810,7 @@ def terminal_lines(stats: GitHubStats, theme: dict[str, str]) -> str:
 
 
 def build_svg(ascii_lines: list[str], stats: GitHubStats, theme: dict[str, str]) -> str:
-    ascii_spans = svg_text_lines(ascii_lines, 70, 82)
+    ascii_spans = svg_text_lines(ascii_lines, 70, 72)
     title = f"{stats.name} GitHub profile card"
     return f'''<svg width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">{escape_text(title)}</title>
