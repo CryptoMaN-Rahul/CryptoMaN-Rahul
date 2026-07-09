@@ -4,7 +4,7 @@
   <style>
     .ascii {
       fill: #c9d1d9;
-      font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font: 15px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       white-space: pre;
     }
     .terminal {
@@ -16,79 +16,72 @@
     .label { fill: #ffa657; }
     .value { fill: #a5d6ff; }
     .green { fill: #3fb950; }
+    .red { fill: #ff7b72; }
   </style>
   <rect width="1280" height="720" rx="18" fill="#0d1117"/>
   <rect x="24" y="24" width="1232" height="672" rx="18" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text class="ascii" xml:space="preserve">
-<tspan x="68" y="92.0"></tspan>
-<tspan x="68" y="104.6"></tspan>
-<tspan x="68" y="117.2">                         ,    ri</tspan>
-<tspan x="68" y="129.8">                     ;sG#9#Mh9@BGXXA</tspan>
-<tspan x="68" y="142.4">                  .hB&amp;&amp;&amp;BB&amp;B&amp;&amp;&amp;B&amp;@&amp;&amp;H.</tspan>
-<tspan x="68" y="155.0">                 ,M@@BBB&amp;@&amp;BB&amp;&amp;&amp;&amp;BBBBG;</tspan>
-<tspan x="68" y="167.6">                X9&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;B&amp;&amp;&amp;&amp;BBB&amp;&amp;BHX.</tspan>
-<tspan x="68" y="180.2">               A@@&amp;&amp;@&amp;&amp;&amp;&amp;&amp;&amp;B&amp;&amp;&amp;&amp;@@&amp;&amp;&amp;&amp;&amp;B&amp;Bi</tspan>
-<tspan x="68" y="192.8">               5&amp;&amp;&amp;&amp;&amp;@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@&amp;&amp;BB9s</tspan>
-<tspan x="68" y="205.4">               H@&amp;&amp;&amp;&amp;BB@@&amp;B&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@&amp;&amp;@&amp;&amp;&amp;i</tspan>
-<tspan x="68" y="218.0">              ;@&amp;@@&amp;&amp;B9&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@&amp;@@@@@&amp;&amp;S</tspan>
-<tspan x="68" y="230.6">              2&amp;&amp;@@&amp;&amp;@@&amp;B&amp;&amp;&amp;&amp;&amp;9GMMH#@@@@@&amp;&amp;&amp;i</tspan>
-<tspan x="68" y="243.2">              A@&amp;@&amp;@@@BBB99#Gh2XsXA5H&amp;@&amp;&amp;&amp;@3</tspan>
-<tspan x="68" y="255.8">               #&amp;&amp;@@&amp;B9H352AsriirsXAAH@&amp;&amp;@X</tspan>
-<tspan x="68" y="268.4">               :&amp;&amp;BB#Mh5Ari;;iiisssXA29@@A</tspan>
-<tspan x="68" y="281.0">                G@HSS#9&amp;&amp;#M52h#&amp;&amp;9SSH23&amp;G</tspan>
-<tspan x="68" y="293.6">                 #GB&amp;@@B9@#5s5S9BB9Sh22G</tspan>
-<tspan x="68" y="306.2">                rMM3MHM55MhXisA2552ArsA52</tspan>
-<tspan x="68" y="318.8">                MS3AsrrsA33Xrssii;;;isX2M</tspan>
-<tspan x="68" y="331.4">                XSM3Xrrr5h2r;irsi;;isA25;</tspan>
-<tspan x="68" y="344.0">                A9Gh2AsAhMSH5h3srrrsA2h3,</tspan>
-<tspan x="68" y="356.6">                iBSH35AX2#&amp;GhSSs:rXA55MX</tspan>
-<tspan x="68" y="369.2">                 i9GM35MSSSGHGHGS3A55HA</tspan>
-<tspan x="68" y="381.8">                  HBGM#@&amp;#M3525H9#23H9</tspan>
-<tspan x="68" y="394.4">                  ;@&amp;#SGMGSHMMh5A5M#&amp;5</tspan>
-<tspan x="68" y="407.0">                   2@&amp;ShMhMGH2XXA39@9</tspan>
-<tspan x="68" y="419.6">                   ;B@&amp;#h55MM2XAMB&amp;GA5,</tspan>
-<tspan x="68" y="432.2">                  3&amp;G9&amp;@&amp;BB&amp;@&amp;B&amp;@93XsS&amp;i</tspan>
-<tspan x="68" y="444.8">                 X@BGG#B&amp;@@@@@&amp;#hAsXXM&amp;Si</tspan>
-<tspan x="68" y="457.4">                A&amp;&amp;BGGGS#BBB#M5AssrssHB#9Ms:</tspan>
-<tspan x="68" y="470.0">             rh9@@&amp;@#HHMMHHM32XXsrssAB99##9&amp;#3s,</tspan>
-<tspan x="68" y="482.6">          rMB@@@&amp;@&amp;&amp;BGM353h35AXsrsss#&amp;#9###9&amp;&amp;&amp;BS3r.</tspan>
-<tspan x="68" y="495.2">       rh9@@&amp;&amp;&amp;&amp;@@@&amp;BSHM5222AXssrrXH@9999###9BBBB&amp;&amp;BG5r</tspan>
-<tspan x="68" y="507.8">   .sM9@@&amp;BBB&amp;&amp;B&amp;@@@&amp;9HM3XsXXXXsrXMB9#9#####99BBBBBBB&amp;&amp;9HA:</tspan>
-<tspan x="68" y="520.4">,AGB@&amp;BBBBBBB&amp;&amp;9B&amp;&amp;@&amp;&amp;B9#Sr;rsXssh999#######999BBBBB9999BBBM</tspan>
-<tspan x="68" y="533.0">B&amp;&amp;B9BBBBBBBB&amp;&amp;9BB&amp;&amp;&amp;&amp;@@@@#;:rXXMB9B@&amp;BBBBB9999BB9BBBBB99999</tspan>
-<tspan x="68" y="545.6">BBBBBB9BB9BBBB&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@BssAH&amp;&amp;@&amp;BB&amp;BBBB9#99BB99&amp;B9BBB99#</tspan>
-<tspan x="68" y="558.2">BBBBBB9BBB99BBB9BBBB&amp;&amp;B&amp;BB&amp;@B5S&amp;B&amp;&amp;B9BB999B9##9B999&amp;B#BB&amp;9#9</tspan>
-<tspan x="68" y="570.8">BBBBB99BB9999BBBBBB9B&amp;&amp;BBBB&amp;@BBBBB999BB99B99#999999B9#BB&amp;99B</tspan>
-<tspan x="68" y="583.4">B9B&amp;&amp;9BBB99999B99B999BB&amp;B99&amp;&amp;B999B999999999999999#9B9#B&amp;&amp;9B9</tspan>
-<tspan x="68" y="596.0">&amp;B9B&amp;B99BB99B99999999B9BBB&amp;&amp;GGB999B99999999999999#9B9#9&amp;&amp;9&amp;9</tspan>
-<tspan x="68" y="608.6">&amp;BBB&amp;B99BB99999999999999B&amp;&amp;BMMB9BBB999999999999#99999#B&amp;&amp;B&amp;9</tspan>
-<tspan x="68" y="621.2">&amp;&amp;B&amp;@B9BB99999999999999BBB&amp;#BB99BBB999999999999999999#B&amp;&amp;&amp;BB</tspan>
-<tspan x="68" y="633.8">&amp;&amp;B&amp;@B9BB9999999999999999&amp;&amp;#99999BB99999999BBB9999999#9@&amp;&amp;&amp;B</tspan>
-<tspan x="68" y="646.4">&amp;@&amp;&amp;@BBBBBB99999999999B99&amp;&amp;#99B9#BB99999999M53###99BB99&amp;&amp;&amp;&amp;&amp;</tspan>
-<tspan x="68" y="659.0">&amp;&amp;@@@&amp;BBBBBBB99999999B99B&amp;&amp;#99999BB999999BSssrXX9999BB&amp;B&amp;&amp;&amp;&amp;</tspan>
-<tspan x="68" y="671.6">&amp;&amp;@@@&amp;B&amp;&amp;BBBB999999B9999B&amp;B#99B9BBBB9999B99#SGSS9999BB&amp;&amp;&amp;&amp;&amp;&amp;</tspan>
-<tspan x="68" y="684.2">@@@@@@&amp;&amp;&amp;&amp;BBBBBBBB999B9BB&amp;999999&amp;BBBBB99999BBBBB999BBB&amp;@@&amp;&amp;&amp;</tspan>
+<tspan x="70" y="82.0"></tspan>
+<tspan x="70" y="97.0"></tspan>
+<tspan x="70" y="112.0">                     *=</tspan>
+<tspan x="70" y="127.0">              :@%%*=%@%+ .</tspan>
+<tspan x="70" y="142.0">            *@%%#%%#%%#%%%*</tspan>
+<tspan x="70" y="157.0">           %@#%%%%%%%%%%%%%:</tspan>
+<tspan x="70" y="172.0">          .%%%%%@%%%@%%%%%%#</tspan>
+<tspan x="70" y="187.0">          %%%%%%%@%#%%%%%%%%#</tspan>
+<tspan x="70" y="202.0">         %%%%%@%@%%%%@%%%#%%%%-</tspan>
+<tspan x="70" y="217.0">        #@%%@%%%%%%%%@@@%%%%%#%#</tspan>
+<tspan x="70" y="232.0">        @%@@@@%%%@%%@%%@@@@%%%#@:</tspan>
+<tspan x="70" y="247.0">        %%%%%@@%%%%%@%%@@@@@@%%%#</tspan>
+<tspan x="70" y="262.0">        @%%%%%%%%#%%%%%@@@@@%%%%@#</tspan>
+<tspan x="70" y="277.0">       :@%@%%#%@@%%%%%@@@@@@%%@%%#</tspan>
+<tspan x="70" y="292.0">       *@%@@%##%%%%@%%%%%@@@@@@@%%-</tspan>
+<tspan x="70" y="307.0">       %@%@%%%%%%%%%%%%%%@@@@@@@%@+</tspan>
+<tspan x="70" y="322.0">       @%@@@@@@%%@%%%%*==+%@%@@%%#</tspan>
+<tspan x="70" y="337.0">       %%@@@@%@%%%%#*-   :+%%@@%@*</tspan>
+<tspan x="70" y="352.0">       @@@@@@@####*=:    .:*@%@%%.</tspan>
+<tspan x="70" y="367.0">       *%%@@@%#+=-:        :%@%@=</tspan>
+<tspan x="70" y="382.0">        @%@@##+.           .*@%%</tspan>
+<tspan x="70" y="397.0">        #@%%*-.             =@%:</tspan>
+<tspan x="70" y="412.0">        =%**=-+#+:  .=**=-- :%@</tspan>
+<tspan x="70" y="427.0">        .@=*%@@@@*-:=#@@%##= **</tspan>
+<tspan x="70" y="442.0">         #+@%%%%@%- .*%%#*=- +</tspan>
+<tspan x="70" y="457.0">         :**%##-*#.  -=+**-  -</tspan>
+<tspan x="70" y="472.0">         +-.-=:.-=    ..     .-</tspan>
+<tspan x="70" y="487.0">        :*:     ::.           +</tspan>
+<tspan x="70" y="502.0">        .+:.    :-           .:</tspan>
+<tspan x="70" y="517.0">         +-:    -:           :</tspan>
+<tspan x="70" y="532.0">         *=:   .-:.         ::</tspan>
+<tspan x="70" y="547.0">         #+-.  :=*#=++     .:-</tspan>
+<tspan x="70" y="562.0">         %+=:.  =%+:-+    ..--</tspan>
+<tspan x="70" y="577.0">         +*+:.  :%*=#*    .:=</tspan>
+<tspan x="70" y="592.0">          %+-::+#*==--++. ::-</tspan>
+<tspan x="70" y="607.0">          *#=-#@*=====*@=.:+:</tspan>
+<tspan x="70" y="622.0">          -@++%%#+:. .-++.=%</tspan>
+<tspan x="70" y="637.0">           @%**===:.:-. :=#%</tspan>
+<tspan x="70" y="652.0">           %@#=-=*@%#-:.:*@+</tspan>
+<tspan x="70" y="667.0">           :@%===-=+    =%@.</tspan>
   </text>
   <text x="535" y="88" class="terminal title">rahul@cryptoman-rahul <tspan class="muted">---------------------------</tspan></text>
-<text x="535" y="125" class="terminal muted">- System ----------------------------------------------</text>
-<text x="535" y="150" class="terminal"><tspan class="label">OS:</tspan> <tspan class="muted">...........................</tspan> <tspan class="value">macOS 26.5, Linux servers</tspan></text>
-<text x="535" y="175" class="terminal"><tspan class="label">Uptime:</tspan> <tspan class="muted">.....................</tspan> <tspan class="value">23 years, 6 months, 18 days</tspan></text>
-<text x="535" y="200" class="terminal"><tspan class="label">Host:</tspan> <tspan class="muted">...................</tspan> <tspan class="value">cloud servers + backend systems</tspan></text>
-<text x="535" y="225" class="terminal"><tspan class="label">Kernel:</tspan> <tspan class="muted">..............................</tspan> <tspan class="value">Darwin 25.5.0, zsh</tspan></text>
-<text x="535" y="250" class="terminal"><tspan class="label">Focus:</tspan> <tspan class="muted">.........................</tspan> <tspan class="value">backend, cloud, security</tspan></text>
-<text x="535" y="275" class="terminal"><tspan class="label">Mode:</tspan> <tspan class="muted">......................</tspan> <tspan class="value">build, break, automate, ship</tspan></text>
-<text x="535" y="312" class="terminal muted">- Work ------------------------------------------------</text>
-<text x="535" y="337" class="terminal"><tspan class="label">Cloud.Backend:</tspan> <tspan class="muted">..........</tspan> <tspan class="value">APIs, VPS ops, infra automation</tspan></text>
-<text x="535" y="362" class="terminal"><tspan class="label">Security:</tspan> <tspan class="muted">....</tspan> <tspan class="value">bug bounty, harnesses, backend-only design</tspan></text>
-<text x="535" y="387" class="terminal"><tspan class="label">AI.Automation:</tspan> <tspan class="muted">..............</tspan> <tspan class="value">agents, scrapers, workflows</tspan></text>
-<text x="535" y="412" class="terminal"><tspan class="label">Languages:</tspan> <tspan class="muted">......</tspan> <tspan class="value">TypeScript, Python, Go, C++, JavaScript</tspan></text>
-<text x="535" y="449" class="terminal muted">- Contact ---------------------------------------------</text>
-<text x="535" y="474" class="terminal"><tspan class="label">GitHub:</tspan> <tspan class="muted">......................</tspan> <tspan class="value">github.com/CryptoMaN-Rahul</tspan></text>
-<text x="535" y="499" class="terminal"><tspan class="label">LinkedIn:</tspan> <tspan class="muted">......................</tspan> <tspan class="value">linkedin.com/in/0x-rahul</tspan></text>
-<text x="535" y="524" class="terminal"><tspan class="label">X:</tspan> <tspan class="muted">..........................................</tspan> <tspan class="value">@100x_rahul</tspan></text>
-<text x="535" y="561" class="terminal muted">- GitHub Stats ----------------------------------------</text>
-<text x="535" y="586" class="terminal"><tspan class="label">Repos:</tspan> <tspan class="muted">..................</tspan> <tspan class="value">58 public | Stars: 5 | Forks: 2</tspan></text>
-<text x="535" y="611" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">...........</tspan> <tspan class="value">3,303 visible default-branch commits</tspan></text>
-<text x="535" y="636" class="terminal"><tspan class="label">Contribs:</tspan> <tspan class="muted">.................</tspan> <tspan class="value">1,404 visible</tspan> <tspan class="green">+ 1,334 private</tspan></text>
-<text x="535" y="661" class="terminal"><tspan class="label">Followers:</tspan> <tspan class="muted">...........................................</tspan> <tspan class="green">15</tspan></text>
+<text x="535" y="125" class="terminal muted">- System --------------------------------------------------</text>
+<text x="535" y="150" class="terminal"><tspan class="label">OS:</tspan> <tspan class="muted">...............................</tspan> <tspan class="value">macOS 26.5, Linux servers</tspan></text>
+<text x="535" y="175" class="terminal"><tspan class="label">Uptime:</tspan> <tspan class="muted">.........................</tspan> <tspan class="value">23 years, 6 months, 18 days</tspan></text>
+<text x="535" y="200" class="terminal"><tspan class="label">Host:</tspan> <tspan class="muted">.......................</tspan> <tspan class="value">cloud servers + backend systems</tspan></text>
+<text x="535" y="225" class="terminal"><tspan class="label">Kernel:</tspan> <tspan class="muted">..................................</tspan> <tspan class="value">Darwin 25.5.0, zsh</tspan></text>
+<text x="535" y="250" class="terminal"><tspan class="label">Focus:</tspan> <tspan class="muted">.............................</tspan> <tspan class="value">backend, cloud, security</tspan></text>
+<text x="535" y="275" class="terminal"><tspan class="label">Since:</tspan> <tspan class="muted">.................................</tspan> <tspan class="value">GitHub: Jul 31, 2021</tspan></text>
+<text x="535" y="312" class="terminal muted">- Work ----------------------------------------------------</text>
+<text x="535" y="337" class="terminal"><tspan class="label">Cloud.Backend:</tspan> <tspan class="muted">..............</tspan> <tspan class="value">APIs, VPS ops, infra automation</tspan></text>
+<text x="535" y="362" class="terminal"><tspan class="label">Security:</tspan> <tspan class="muted">........</tspan> <tspan class="value">bug bounty, harnesses, backend-only design</tspan></text>
+<text x="535" y="387" class="terminal"><tspan class="label">AI.Automation:</tspan> <tspan class="muted">..................</tspan> <tspan class="value">agents, scrapers, workflows</tspan></text>
+<text x="535" y="412" class="terminal"><tspan class="label">Languages:</tspan> <tspan class="muted">................</tspan> <tspan class="value">TypeScript, Python, C++, HTML, Go</tspan></text>
+<text x="535" y="449" class="terminal muted">- Contact -------------------------------------------------</text>
+<text x="535" y="474" class="terminal"><tspan class="label">GitHub:</tspan> <tspan class="muted">..........................</tspan> <tspan class="value">github.com/CryptoMaN-Rahul</tspan></text>
+<text x="535" y="499" class="terminal"><tspan class="label">LinkedIn:</tspan> <tspan class="muted">..........................</tspan> <tspan class="value">linkedin.com/in/0x-rahul</tspan></text>
+<text x="535" y="524" class="terminal"><tspan class="label">X:</tspan> <tspan class="muted">..............................................</tspan> <tspan class="value">@100x_rahul</tspan></text>
+<text x="535" y="549" class="terminal"><tspan class="label">Location:</tspan> <tspan class="muted">...............................................</tspan> <tspan class="value">Goa</tspan></text>
+<text x="535" y="586" class="terminal muted">- GitHub Stats --------------------------------------------</text>
+<text x="535" y="611" class="terminal"><tspan class="label">Repos:</tspan> <tspan class="muted">...................</tspan> <tspan class="value">58 {Contributed: 1,405} | Stars: 5</tspan></text>
+<text x="535" y="636" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">................................</tspan> <tspan class="value">305 | Followers: 15</tspan></text>
+<text x="535" y="661" class="terminal"><tspan class="label">Lines of Code on GitHub:</tspan> <tspan class="muted">...</tspan> <tspan class="value">1,254,653</tspan> <tspan class="muted">(</tspan><tspan class="green">7,509,920++</tspan><tspan class="muted">, </tspan><tspan class="red">6,255,267--</tspan><tspan class="muted">)</tspan></text>
 </svg>

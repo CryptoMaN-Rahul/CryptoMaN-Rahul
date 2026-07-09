@@ -1,0 +1,49 @@
+name: Update Profile Card
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/update-profile.yml"
+      - "assets/profile_ascii.txt"
+      - "scripts/build_profile_card.py"
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build profile SVGs
+        env:
+          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_LOGIN: CryptoMaN-Rahul
+          PROFILE_OS: macOS 26.5, Linux servers
+          PROFILE_KERNEL: Darwin 25.5.0, zsh
+          PROFILE_HOST: cloud servers + backend systems
+          PROFILE_FOCUS: backend, cloud, security
+          PROFILE_LINKEDIN: linkedin.com/in/0x-rahul
+          PROFILE_X: "@100x_rahul"
+        run: python scripts/build_profile_card.py --ascii assets/profile_ascii.txt
+
+      - name: Commit updated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dark_mode.svg light_mode.svg assets/profile_stats_cache.json
+          if git diff --cached --quiet; then
+            echo "Profile cards are already current."
+          else
+            git commit -m "Update profile card stats"
+            git push
+          fi
