@@ -27,11 +27,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH = 1280
 HEIGHT = 720
-ASCII_COLS = 80
-ASCII_MAX_ROWS = 52
-ASCII_FONT_SIZE = 10
-ASCII_LINE_HEIGHT = 11.4
-ASCII_CHAR_WIDTH = 6.02  # monospace advance width at ASCII_FONT_SIZE, sets cell aspect
+ASCII_COLS = 88
+ASCII_MAX_ROWS = 60
+ASCII_FONT_SIZE = 9
+ASCII_LINE_HEIGHT = 10.26
+ASCII_CHAR_WIDTH = 5.42  # monospace advance width at ASCII_FONT_SIZE, sets cell aspect
 TERM_X = 535
 TERM_Y = 88
 TERM_LINE_HEIGHT = 25
@@ -52,9 +52,9 @@ DEFAULT_STATS_CACHE = ROOT / "assets" / "profile_stats_cache.json"
 # image URL follow a future profile-repository rename without another code edit.
 README_REPO = os.environ.get("GITHUB_REPOSITORY", "").strip() or "100xRahul/100xRahul"
 USER_AGENT = "100xrahul-profile-card"
-# Keep head, neck, and shoulder line; trim only backdrop margins so the
-# portrait composition matches the source photo.
-DEFAULT_PHOTO_CROP = "0.12,0.02,0.88,0.72"
+# Head-dominant crop: the face has to fill most of the grid for the eyes,
+# nose, and mouth to get enough character cells to stay recognizable.
+DEFAULT_PHOTO_CROP = "0.17,0.02,0.83,0.68"
 # Piecewise tone curve (darkness in -> ramp position out). The photo's global
 # histogram bunches skin and facial features together (brow ~= forehead), so
 # the curve spreads that band while local-contrast filtering separates the
@@ -735,6 +735,58 @@ def pick_glyph(darkness: float, x: int, y: int) -> str:
     return pool[((x * 2654435761 + y * 40503) >> 4) % len(pool)]
 
 
+def adaptive_equalize(image, tiles: int = 4, clip: float = 2.5):
+    """Pure-Python CLAHE: per-tile clipped histogram equalization with
+    bilinear blending between tile lookup tables. Lifts eyes, brows, and lip
+    edges that global contrast stretching leaves flat."""
+    width, height = image.size
+    pixels = image.load()
+    tile_w, tile_h = width / tiles, height / tiles
+    luts: list[list[list[int]]] = [[None] * tiles for _ in range(tiles)]  # type: ignore[list-item]
+    for ty in range(tiles):
+        for tx in range(tiles):
+            x0, y0 = int(tx * tile_w), int(ty * tile_h)
+            x1, y1 = int((tx + 1) * tile_w), int((ty + 1) * tile_h)
+            histogram = [0] * 256
+            for y in range(y0, y1):
+                for x in range(x0, x1):
+                    histogram[pixels[x, y]] += 1
+            count = (x1 - x0) * (y1 - y0)
+            limit = max(1, int(clip * count / 256))
+            excess = 0
+            for i in range(256):
+                if histogram[i] > limit:
+                    excess += histogram[i] - limit
+                    histogram[i] = limit
+            bonus = excess // 256
+            cumulative = 0
+            lut = [0] * 256
+            for i in range(256):
+                cumulative += histogram[i] + bonus
+                lut[i] = min(255, int(255 * cumulative / count))
+            luts[ty][tx] = lut
+
+    from PIL import Image as PILImage
+
+    result = PILImage.new("L", (width, height))
+    out = result.load()
+    for y in range(height):
+        fy = max(0.0, min(y / tile_h - 0.5, tiles - 1))
+        ty0 = int(fy)
+        ty1 = min(ty0 + 1, tiles - 1)
+        wy = fy - ty0
+        for x in range(width):
+            fx = max(0.0, min(x / tile_w - 0.5, tiles - 1))
+            tx0 = int(fx)
+            tx1 = min(tx0 + 1, tiles - 1)
+            wx = fx - tx0
+            value = pixels[x, y]
+            top_mix = luts[ty0][tx0][value] * (1 - wx) + luts[ty0][tx1][value] * wx
+            bottom_mix = luts[ty1][tx0][value] * (1 - wx) + luts[ty1][tx1][value] * wx
+            out[x, y] = int(top_mix * (1 - wy) + bottom_mix * wy)
+    return result
+
+
 def photo_to_ascii(photo: Path) -> list[str]:
     from PIL import Image, ImageFilter, ImageOps
 
@@ -748,6 +800,7 @@ def photo_to_ascii(photo: Path) -> list[str]:
         int(height * bottom),
     ))
     image = ImageOps.autocontrast(image, cutoff=0.5)
+    image = Image.blend(image, adaptive_equalize(image), 0.5)
     # Large-radius unsharp masking boosts local contrast: brows, eyes, nose
     # shadow, and beard separate from surrounding skin even though their
     # global luminance is nearly identical. The smaller pass crispens the
