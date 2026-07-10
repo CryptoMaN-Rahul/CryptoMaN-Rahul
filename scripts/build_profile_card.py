@@ -27,10 +27,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH = 1280
 HEIGHT = 720
-ASCII_COLS = 72
-ASCII_ROWS = 50
-ASCII_FONT_SIZE = 11
-ASCII_LINE_HEIGHT = 12.5
+ASCII_COLS = 80
+ASCII_MAX_ROWS = 52
+ASCII_FONT_SIZE = 10
+ASCII_LINE_HEIGHT = 11.4
+ASCII_CHAR_WIDTH = 6.02  # monospace advance width at ASCII_FONT_SIZE, sets cell aspect
 TERM_X = 535
 TERM_Y = 88
 TERM_LINE_HEIGHT = 25
@@ -51,9 +52,14 @@ DEFAULT_STATS_CACHE = ROOT / "assets" / "profile_stats_cache.json"
 # image URL follow a future profile-repository rename without another code edit.
 README_REPO = os.environ.get("GITHUB_REPOSITORY", "").strip() or "100xRahul/100xRahul"
 USER_AGENT = "100xrahul-profile-card"
-# Remove only the passport-photo backdrop and polo-shirt area. The complete
-# hair, cheek, chin, and neck outline stays within the portrait.
-DEFAULT_PHOTO_CROP = "0.17,0.00,0.83,0.68"
+# Keep head, neck, and shoulder line; trim only backdrop margins so the
+# portrait composition matches the source photo.
+DEFAULT_PHOTO_CROP = "0.12,0.02,0.88,0.72"
+# Piecewise tone curve (darkness in -> ramp position out). The photo's global
+# histogram bunches skin and facial features together (brow ~= forehead), so
+# the curve spreads that band while local-contrast filtering separates the
+# features; backdrop maps to blank, hair and shirt to the dense glyphs.
+TONE_ANCHORS = [(0.10, 0.0), (0.40, 0.12), (0.62, 0.38), (0.78, 0.68), (1.0, 1.0)]
 
 
 @dataclass(frozen=True)
@@ -424,24 +430,33 @@ def fetch_rest_stats(login: str, token: str | None) -> GitHubStats:
 
 
 def fetch_contributor_totals(repo: str, login: str, token: str | None) -> tuple[int, int, int] | None:
+    """Return (commits, additions, deletions), (0, 0, 0) when the user has no
+    contributions in the repo, or None when GitHub has not finished computing
+    the stats (HTTP 202) so the caller must not cache a misleading zero."""
     url = f"https://api.github.com/repos/{repo}/stats/contributors"
-    for attempt in range(2):
+    for attempt in range(4):
         status, payload = request_json(url, token=token)
         if status == 202:
-            time.sleep(1 + attempt)
+            time.sleep(2 * (attempt + 1))
             continue
         if not isinstance(payload, list):
             return None
+        saw_null_author = False
         for contributor in payload:
-            author = contributor.get("author") or {}
-            if (author.get("login") or "").lower() != login.lower():
+            author = contributor.get("author")
+            if not author or not author.get("login"):
+                # After an account rename GitHub serves recomputed stats with
+                # null authors until attribution is rebuilt.
+                saw_null_author = True
+                continue
+            if author["login"].lower() != login.lower():
                 continue
             weeks = contributor.get("weeks") or []
             commits = int(contributor.get("total") or 0)
             additions = sum(int(week.get("a") or 0) for week in weeks)
             deletions = sum(int(week.get("d") or 0) for week in weeks)
             return commits, additions, deletions
-        return None
+        return None if saw_null_author else (0, 0, 0)
     return None
 
 
@@ -517,6 +532,7 @@ def with_line_stats(
     if repos_to_fetch:
         warn(f"Refreshing line stats for {len(repos_to_fetch)} changed/new repo(s)")
 
+    unresolved = 0
     with ThreadPoolExecutor(max_workers=min(workers, max(1, len(repos_to_fetch)))) as executor:
         futures = {
             executor.submit(fetch_contributor_totals, repo.name, stats.login, token): repo
@@ -541,13 +557,12 @@ def with_line_stats(
                     add_line_totals(stale, aggregate)
                     found_any = True
                 else:
-                    next_entries[repo.name] = {
-                        "head_oid": repo.head_oid,
-                        "commits": 0,
-                        "additions": 0,
-                        "deletions": 0,
-                    }
-                    found_any = True
+                    # Stats not ready yet (HTTP 202) or attribution is still
+                    # rebuilding after an account rename: leave the repo out of
+                    # the cache so the next run fetches it again instead of
+                    # freezing a zero against the current head.
+                    unresolved += 1
+                    warn(f"{repo.name}: contributor stats not ready; will retry next run")
                 continue
             found_any = True
             repo_commits, repo_additions, repo_deletions = repo_totals
@@ -560,11 +575,18 @@ def with_line_stats(
             next_entries[repo.name] = entry
             add_line_totals(entry, aggregate)
 
+    if repos_to_fetch and found_any:
+        write_stats_cache(cache_path, stats.login, next_entries)
+
     if not found_any:
         return stats
 
-    if repos_to_fetch:
-        write_stats_cache(cache_path, stats.login, next_entries)
+    if unresolved and not aggregate["commits"]:
+        # Everything resolved so far is a zero (e.g. unmodified forks) while
+        # real repos are still pending; showing "0 commits, 0 lines" would be
+        # misleading, so report the totals as unavailable until data lands.
+        warn(f"Line stats incomplete ({unresolved} repo(s) pending); leaving totals unavailable")
+        return stats
 
     return replace(
         stats,
@@ -688,8 +710,33 @@ def profile_lines(stats: GitHubStats) -> list[tuple[str, str | None]]:
     ]
 
 
+def tone_curve(darkness: float) -> float:
+    if darkness <= TONE_ANCHORS[0][0]:
+        return TONE_ANCHORS[0][1]
+    for (x0, y0), (x1, y1) in zip(TONE_ANCHORS, TONE_ANCHORS[1:]):
+        if darkness <= x1:
+            return y0 + (y1 - y0) * (darkness - x0) / (x1 - x0)
+    return TONE_ANCHORS[-1][1]
+
+
+# Glyph pools ordered light to dark; glyphs within a pool share ink weight, and
+# a position hash picks between them so large even-toned areas (hair, shirt)
+# read as organic texture instead of a repeated single character.
+GLYPH_POOLS = [
+    " ", " ", ".", ",", ":", ";", "i!l", "rjf", "szt", "Xxw",
+    "AaV", "2Z4", "5S6", "hkb", "HKD", "G80", "#EM", "%W&", "@NQ",
+]
+
+
+def pick_glyph(darkness: float, x: int, y: int) -> str:
+    pool = GLYPH_POOLS[int(darkness * (len(GLYPH_POOLS) - 1))]
+    if len(pool) == 1:
+        return pool
+    return pool[((x * 2654435761 + y * 40503) >> 4) % len(pool)]
+
+
 def photo_to_ascii(photo: Path) -> list[str]:
-    from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+    from PIL import Image, ImageFilter, ImageOps
 
     image = Image.open(photo).convert("L")
     width, height = image.size
@@ -701,25 +748,59 @@ def photo_to_ascii(photo: Path) -> list[str]:
         int(height * bottom),
     ))
     image = ImageOps.autocontrast(image, cutoff=0.5)
-    # Preserve the larger facial shapes while removing tiny skin-texture noise.
-    image = image.filter(ImageFilter.GaussianBlur(radius=0.35))
-    image = ImageEnhance.Contrast(image).enhance(1.05)
-    image = ImageEnhance.Brightness(image).enhance(1.10)
-    image = image.resize((ASCII_COLS, ASCII_ROWS), Image.Resampling.LANCZOS)
+    # Large-radius unsharp masking boosts local contrast: brows, eyes, nose
+    # shadow, and beard separate from surrounding skin even though their
+    # global luminance is nearly identical. The smaller pass crispens the
+    # feature edges; the final blur removes single-pixel speckle.
+    image = image.filter(ImageFilter.UnsharpMask(radius=12, percent=110, threshold=2))
+    image = image.filter(ImageFilter.UnsharpMask(radius=5, percent=90, threshold=2))
+    image = image.filter(ImageFilter.GaussianBlur(radius=0.3))
 
-    ramp = "      .,:;irsXA25hHG#%@"
-    gamma = 1.70
+    # Match the character-cell aspect so the face keeps the photo's
+    # proportions instead of stretching vertically.
+    crop_w, crop_h = image.size
+    grid_rows = min(
+        ASCII_MAX_ROWS,
+        round(ASCII_COLS * (ASCII_CHAR_WIDTH / ASCII_LINE_HEIGHT) * crop_h / crop_w),
+    )
+    image = image.resize((ASCII_COLS, grid_rows), Image.Resampling.LANCZOS)
+
+    darkness = [
+        [tone_curve((255 - image.getpixel((x, y))) / 255) for x in range(ASCII_COLS)]
+        for y in range(grid_rows)
+    ]
+
+    # The shadowed neck and the dark polo shirt sit in the same tonal band as
+    # the beard, which made the chin visually merge into the shirt. Find the
+    # shirt (the contiguous wide-dark rows at the bottom) and the neck line
+    # (the sparsest row above it), then squash the neck band to light glyphs
+    # so the face ends in a clear gap while the shirt keeps its dark weight.
+    dark_frac = [
+        sum(1 for x in range(ASCII_COLS) if darkness[y][x] > 0.55) / ASCII_COLS
+        for y in range(grid_rows)
+    ]
+    shirt_top = grid_rows
+    for y in range(grid_rows - 1, -1, -1):
+        if dark_frac[y] > 0.45:
+            shirt_top = y
+        else:
+            break
+    neck_start = int(grid_rows * 0.62)
+    neck_row = min(range(neck_start, shirt_top), key=lambda y: dark_frac[y], default=shirt_top)
+    for y in range(neck_row, shirt_top):
+        for x in range(ASCII_COLS):
+            if darkness[y][x] > 0.45:
+                darkness[y][x] = 0.25 + (darkness[y][x] - 0.45) * 0.30
+
     rows: list[str] = []
-    for y in range(ASCII_ROWS):
+    for y in range(grid_rows):
         chars = []
         for x in range(ASCII_COLS):
-            pixel = image.getpixel((x, y))
-            darkness = ((255 - pixel) / 255) ** gamma
-            if darkness < 0.04:
+            value = darkness[y][x]
+            if value < 0.05:
                 chars.append(" ")
                 continue
-            index = int(darkness * (len(ramp) - 1))
-            chars.append(ramp[index])
+            chars.append(pick_glyph(value, x, y))
         rows.append("".join(chars).rstrip())
     return rows
 
