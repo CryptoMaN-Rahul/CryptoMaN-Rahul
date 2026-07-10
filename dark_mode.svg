@@ -169,7 +169,7 @@
 <text x="535" y="549" class="terminal"><tspan class="label">X:</tspan> <tspan class="muted">.........................................</tspan> <tspan class="value">x.com/100x_rahul</tspan></text>
 <text x="535" y="586" class="terminal muted">- GitHub Stats --------------------------------------------</text>
 <text x="535" y="611" class="terminal"><tspan class="label">Repos:</tspan> <tspan class="muted">........................</tspan> <tspan class="value">58 | Stars: 5 | Followers: 15</tspan></text>
-<text x="535" y="636" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">..........</tspan> <tspan class="value">3,324 repo | 66 contrib | Merged PRs: 203</tspan></text>
+<text x="535" y="636" class="terminal"><tspan class="label">Commits:</tspan> <tspan class="muted">.............</tspan> <tspan class="value">19 repo | 66 contrib | Merged PRs: 203</tspan></text>
 <text x="535" y="661" class="terminal"><tspan class="label">Contribs:</tspan> <tspan class="muted">.....................</tspan> <tspan class="value">1,420 visible + 1,339 private</tspan></text>
-<text x="535" y="686" class="terminal"><tspan class="label">Lines of Code on GitHub:</tspan> <tspan class="muted">........................</tspan> <tspan class="value">unavailable</tspan></text>
+<text x="535" y="686" class="terminal"><tspan class="label">Lines of Code on GitHub:</tspan> <tspan class="muted">...........</tspan> <tspan class="value">1,623</tspan> <tspan class="muted">(</tspan><tspan class="green">3,246++</tspan><tspan class="muted">, </tspan><tspan class="red">1,623--</tspan><tspan class="muted">)</tspan></text>
 </svg>
