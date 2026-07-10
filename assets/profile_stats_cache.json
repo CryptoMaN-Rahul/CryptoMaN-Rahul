@@ -1,349 +1,349 @@
 {
-  "login": "CryptoMaN-Rahul",
+  "login": "100xRahul",
   "repos": {
-    "CryptoMaN-Rahul/AIpaper": {
-      "additions": 32346,
-      "commits": 7,
-      "deletions": 133,
+    "100xRahul/AIpaper": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "9387b09b194efe5dfaf4d448010de15935489d84"
     },
-    "CryptoMaN-Rahul/AWSxTf": {
-      "additions": 2835,
-      "commits": 3,
-      "deletions": 1600,
+    "100xRahul/AWSxTf": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "0a3e8892980ec7458bf15aee6632529951627090"
     },
-    "CryptoMaN-Rahul/CryptoMaN-Rahul": {
-      "additions": 2653,
-      "commits": 16,
-      "deletions": 950,
-      "head_oid": "a00d7b974b9a3d170e8c71dc6392332ace93e43d"
+    "100xRahul/CryptoMaN-Rahul": {
+      "additions": 2727,
+      "commits": 17,
+      "deletions": 1010,
+      "head_oid": "bb6bc1868f5b163dde367dafc3781a768aaac7d7"
     },
-    "CryptoMaN-Rahul/Custom-RAG-Application": {
-      "additions": 38,
-      "commits": 4,
-      "deletions": 41,
+    "100xRahul/Custom-RAG-Application": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "0d2914142404172d16d73719ef6ef82bc076933d"
     },
-    "CryptoMaN-Rahul/LoRa-refill-and-water-level-tank-Client": {
+    "100xRahul/LoRa-refill-and-water-level-tank-Client": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "9a9ec06354bf7c5b95fb0768cb0e67b4e380c6cc"
     },
-    "CryptoMaN-Rahul/LoRa-refill-and-water-level-tank-Master": {
+    "100xRahul/LoRa-refill-and-water-level-tank-Master": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "05fc58c4f8d8f629d876a42530c98b1624520091"
     },
-    "CryptoMaN-Rahul/MASM": {
+    "100xRahul/MASM": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "4907f8a401a9d1d9a9a73d74c28562129106d960"
     },
-    "CryptoMaN-Rahul/Podcast-analyzer-frontend": {
-      "additions": 40796,
-      "commits": 23,
-      "deletions": 21976,
+    "100xRahul/Podcast-analyzer-frontend": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "9c53b894e372be1e0253032d0f8bfbcb8c9a1fab"
     },
-    "CryptoMaN-Rahul/Universal-Documentation-Scraper": {
-      "additions": 1092,
-      "commits": 10,
-      "deletions": 317,
+    "100xRahul/Universal-Documentation-Scraper": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "ccf08b85d0cc24ad7768ebcbc789fb2310931f4c"
     },
-    "CryptoMaN-Rahul/Verbi": {
+    "100xRahul/Verbi": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "2d4caae68ab385a56dbc1d8218ed2daed6889396"
     },
-    "CryptoMaN-Rahul/_toc.lab_CRYPTOMAN_RAHUL2112": {
-      "additions": 7624,
-      "commits": 63,
-      "deletions": 4446,
+    "100xRahul/_toc.lab_CRYPTOMAN_RAHUL2112": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "cadc5762b508fb1946a506a6134b2f559975fb40"
     },
-    "CryptoMaN-Rahul/adk-python": {
+    "100xRahul/adk-python": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "f63ec37153d609928c655941c91819d7feebc6f3"
     },
-    "CryptoMaN-Rahul/adk-web": {
+    "100xRahul/adk-web": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "cf7138de618976e1153cfff60f28acc2acc54dae"
     },
-    "CryptoMaN-Rahul/amazon-ml-challenge-2024": {
-      "additions": 390,
-      "commits": 1,
+    "100xRahul/amazon-ml-challenge-2024": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "fc516be988e8965d5526e6c205a15eb0fd545ed3"
     },
-    "CryptoMaN-Rahul/aws-projects": {
-      "additions": 704,
-      "commits": 8,
-      "deletions": 36,
+    "100xRahul/aws-projects": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "8f1d2febb5a9eaf80cd920dee20656f505edcb94"
     },
-    "CryptoMaN-Rahul/biometric-attendance-server-nodejs": {
-      "additions": 1166,
-      "commits": 5,
-      "deletions": 2,
+    "100xRahul/biometric-attendance-server-nodejs": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "46a707d5e447405859894bbb401fabfeaf33fa6d"
     },
-    "CryptoMaN-Rahul/bolt.diy": {
-      "additions": 5,
-      "commits": 4,
-      "deletions": 3,
+    "100xRahul/bolt.diy": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "3c730f9367a49f189d52e426c79f4b888ca66100"
     },
-    "CryptoMaN-Rahul/brandi": {
-      "additions": 4,
-      "commits": 2,
-      "deletions": 1,
+    "100xRahul/brandi": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "4e92d5b935b29bcf7ee62a46ce340af897d83c32"
     },
-    "CryptoMaN-Rahul/crime-report-app": {
+    "100xRahul/crime-report-app": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "112d7c12769576a0600ec543c81b767277938f3f"
     },
-    "CryptoMaN-Rahul/dbms-mini-project": {
-      "additions": 76,
-      "commits": 2,
-      "deletions": 1,
+    "100xRahul/dbms-mini-project": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "c863610e206cf98374566fff957e46d9572f349b"
     },
-    "CryptoMaN-Rahul/dbms-prac-final-jan": {
-      "additions": 1599,
-      "commits": 17,
-      "deletions": 1118,
+    "100xRahul/dbms-prac-final-jan": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "42ea29bde059dd2a668f198cc20d6b3c281d2cbd"
     },
-    "CryptoMaN-Rahul/dbms-project-sem-5": {
-      "additions": 4158,
-      "commits": 31,
-      "deletions": 1975,
+    "100xRahul/dbms-project-sem-5": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "db06c413d72599dd20c8f67458bd850e0c17214f"
     },
-    "CryptoMaN-Rahul/distilabel": {
+    "100xRahul/distilabel": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "f9f0a910262a12a8c58ae61cdd9aba105f109317"
     },
-    "CryptoMaN-Rahul/dsa-assignment": {
-      "additions": 595,
-      "commits": 5,
-      "deletions": 8,
+    "100xRahul/dsa-assignment": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "a5b403f56803f297a4f9d41136639909a6e1297a"
     },
-    "CryptoMaN-Rahul/finalMarathon": {
+    "100xRahul/finalMarathon": {
       "additions": 0,
-      "commits": 4,
-      "deletions": 172,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "f1fd16967302bd4a77c88649b97098465239137a"
     },
-    "CryptoMaN-Rahul/gec-second-year": {
+    "100xRahul/gec-second-year": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "1ff3689b935c36f0027422c901c0e81c4bcf99e4"
     },
-    "CryptoMaN-Rahul/github-final-project": {
+    "100xRahul/github-final-project": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "adf369855f30dc5f2ba8138141942d9936acddd5"
     },
-    "CryptoMaN-Rahul/go-web-app": {
-      "additions": 1053,
-      "commits": 4,
-      "deletions": 97,
+    "100xRahul/go-web-app": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "ac177c6217e412e704d2dbeb37ce55c22e3e4df5"
     },
-    "CryptoMaN-Rahul/h2s": {
-      "additions": 1099,
-      "commits": 1,
+    "100xRahul/h2s": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "96380186d239ca350beb062ec640ed4a9b9fa572"
     },
-    "CryptoMaN-Rahul/hackathon": {
-      "additions": 12099,
-      "commits": 10,
-      "deletions": 94,
+    "100xRahul/hackathon": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "3ec6e582cf39c24896ca04710f94dd5e7db7ab2a"
     },
-    "CryptoMaN-Rahul/java": {
+    "100xRahul/java": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "9eda45aae5c6ea5fb7a0312b85c92342ae16afa5"
     },
-    "CryptoMaN-Rahul/kiroween-hackathon": {
-      "additions": 51625,
-      "commits": 2,
-      "deletions": 1,
+    "100xRahul/kiroween-hackathon": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "7a12a5c9da6db544273b9b1adeee7bd1ee29af67"
     },
-    "CryptoMaN-Rahul/learning-go": {
-      "additions": 78,
-      "commits": 1,
+    "100xRahul/learning-go": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "b115c1c9826a706b132e0c8a9d0409e5990640da"
     },
-    "CryptoMaN-Rahul/learning-rust": {
-      "additions": 71,
-      "commits": 1,
+    "100xRahul/learning-rust": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "bd6af8cdbeb7a454e8170afebefe227d43b59553"
     },
-    "CryptoMaN-Rahul/letschess": {
-      "additions": 5517,
-      "commits": 3,
-      "deletions": 1,
+    "100xRahul/letschess": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "0307c397a0e29813138684a4c71ef198a4922451"
     },
-    "CryptoMaN-Rahul/metta": {
-      "additions": 6224546,
-      "commits": 13,
-      "deletions": 6220398,
+    "100xRahul/metta": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "ad97a238723729d5581fa5817f77846f16cbe6c5"
     },
-    "CryptoMaN-Rahul/notshazam-dhoon": {
-      "additions": 8491,
-      "commits": 1,
+    "100xRahul/notshazam-dhoon": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "04779d0d889b6eb1e43dc1e99a28ade0a9a66504"
     },
-    "CryptoMaN-Rahul/nptel": {
+    "100xRahul/nptel": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": null
     },
-    "CryptoMaN-Rahul/openserv-ha": {
-      "additions": 24755,
-      "commits": 2,
+    "100xRahul/openserv-ha": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "db465760d38ac0aa4ea72b7b224cb99a084414e9"
     },
-    "CryptoMaN-Rahul/openservvvvv": {
-      "additions": 11870,
-      "commits": 1,
+    "100xRahul/openservvvvv": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "c18ab12ac39a23593a1287fb81818f797faa29c9"
     },
-    "CryptoMaN-Rahul/pdftochat": {
-      "additions": 32,
-      "commits": 2,
-      "deletions": 25,
+    "100xRahul/pdftochat": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "fc95823af827af263d9466047d80e8aec9d39f32"
     },
-    "CryptoMaN-Rahul/portfolio-tracker": {
-      "additions": 1943,
-      "commits": 1,
+    "100xRahul/portfolio-tracker": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "3259e2e326a3f228cdcdd9af6fa2517a6baf02fc"
     },
-    "CryptoMaN-Rahul/pushdown-automata": {
+    "100xRahul/pushdown-automata": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "bce2aff21cb7dffb98b60d7901f154a30907e822"
     },
-    "CryptoMaN-Rahul/py": {
-      "additions": 997258,
-      "commits": 3,
-      "deletions": 177,
+    "100xRahul/py": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "b09f2a4aed84862b9a6c2c03d865f8e345c840bf"
     },
-    "CryptoMaN-Rahul/quesolver": {
+    "100xRahul/quesolver": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": null
     },
-    "CryptoMaN-Rahul/rahulmadwalkar5": {
+    "100xRahul/rahulmadwalkar5": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": null
     },
-    "CryptoMaN-Rahul/realtoc": {
-      "additions": 3433,
-      "commits": 37,
-      "deletions": 1076,
+    "100xRahul/realtoc": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "ea9b701c0e64398949c362f23a72e21e94d2633e"
     },
-    "CryptoMaN-Rahul/rep": {
+    "100xRahul/rep": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "b1687ddc318c3e033eb0de9397b333ae8e8c011d"
     },
-    "CryptoMaN-Rahul/scammersbait": {
-      "additions": 926,
-      "commits": 1,
+    "100xRahul/scammersbait": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "05e333c00536e014ee3dc7d1000c3e4d0e88d462"
     },
-    "CryptoMaN-Rahul/scout9-esports": {
-      "additions": 69133,
-      "commits": 12,
-      "deletions": 1389,
+    "100xRahul/scout9-esports": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "a5bc2315a292b7383bc510c8840266bc9dee4c9e"
     },
-    "CryptoMaN-Rahul/sdk": {
-      "additions": 346,
-      "commits": 2,
-      "deletions": 57,
+    "100xRahul/sdk": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "96d5a97cf15bca85322565c5cc9b175402562a2d"
     },
-    "CryptoMaN-Rahul/site": {
-      "additions": 152,
-      "commits": 2,
+    "100xRahul/site": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "ecd4274551d67e142d30c3e7f4c21471d044e0c7"
     },
-    "CryptoMaN-Rahul/softc": {
-      "additions": 66,
-      "commits": 2,
+    "100xRahul/softc": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "e6923f326f778b6ad960494a4a43e98f81c870f2"
     },
-    "CryptoMaN-Rahul/uAgents": {
-      "additions": 80,
-      "commits": 1,
+    "100xRahul/uAgents": {
+      "additions": 0,
+      "commits": 0,
       "deletions": 0,
       "head_oid": "854cda49ba5f6724e673c8c39becc471e21489de"
     },
-    "CryptoMaN-Rahul/unstop-problem-statement-submission": {
-      "additions": 110,
-      "commits": 2,
-      "deletions": 1,
+    "100xRahul/unstop-problem-statement-submission": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "bbca126ffa487221c06feb55a26211279429352b"
     },
-    "CryptoMaN-Rahul/upstox-authentication-": {
-      "additions": 1249,
-      "commits": 3,
-      "deletions": 1,
+    "100xRahul/upstox-authentication-": {
+      "additions": 0,
+      "commits": 0,
+      "deletions": 0,
       "head_oid": "57cae759639d130574c9df1e5da1d42a0e93e37f"
     },
-    "CryptoMaN-Rahul/upstox-nodejs": {
+    "100xRahul/upstox-nodejs": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
       "head_oid": "5a90f431ff0db1ec6106cce8ac9ef07cb83563cd"
     },
-    "CryptoMaN-Rahul/vscode-c-snippets": {
+    "100xRahul/vscode-c-snippets": {
       "additions": 0,
       "commits": 0,
       "deletions": 0,
@@ -351,5 +351,5 @@
     }
   },
   "schema_version": 1,
-  "updated_at": "2026-07-10T04:15:38"
+  "updated_at": "2026-07-10T18:36:09"
 }
