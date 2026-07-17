@@ -92,7 +92,7 @@
   <text x="535" y="88" class="terminal title">rahul@100xrahul <tspan class="muted">---------------------------</tspan></text>
 <text x="535" y="125" class="terminal muted">- System --------------------------------------------------</text>
 <text x="535" y="150" class="terminal"><tspan class="label">OS:</tspan> <tspan class="muted">...............................</tspan> <tspan class="value">macOS 26.5, Linux servers</tspan></text>
-<text x="535" y="175" class="terminal"><tspan class="label">Uptime:</tspan> <tspan class="muted">....................................</tspan> <tspan class="value">23y 6m 25d</tspan> <tspan class="muted">+</tspan><tspan class="cursor">_</tspan></text>
+<text x="535" y="175" class="terminal"><tspan class="label">Uptime:</tspan> <tspan class="muted">....................................</tspan> <tspan class="value">23y 6m 26d</tspan> <tspan class="muted">+</tspan><tspan class="cursor">_</tspan></text>
 <text x="1190" y="175" class="terminal value" opacity="0">00s<animate attributeName="opacity" dur="60s" repeatCount="indefinite" keyTimes="0;0.0165;0.0167;1" values="1;1;0;0"/></text>
 <text x="1190" y="175" class="terminal value" opacity="0">01s<animate attributeName="opacity" dur="60s" repeatCount="indefinite" keyTimes="0;0.0167;0.0168;0.0333;0.0334;1" values="0;0;1;1;0;0"/></text>
 <text x="1190" y="175" class="terminal value" opacity="0">02s<animate attributeName="opacity" dur="60s" repeatCount="indefinite" keyTimes="0;0.0333;0.0334;0.0500;0.0501;1" values="0;0;1;1;0;0"/></text>
